@@ -13,24 +13,21 @@ import '../../../../utils/helpers/cloud_helper_functions.dart';
 import '../../controllers/all_products_controller.dart';
 import '../../models/product_model.dart';
 
-/// Represents a screen that displays a list of products with the option for custom sorting and filtering.
+
 class AllProducts extends StatelessWidget {
   const AllProducts({Key? key, required this.title, this.query, this.futureMethod}) : super(key: key);
 
-  /// The title of the screen.
+
   final String title;
 
-  /// Represents a query to fetch products from the database.
-  /// Use the [query] parameter to apply custom sorting or filtering criteria.
+
   final Query? query;
 
-  /// Represents a function to fetch products as a future.
-  /// If you use this [futureMethod] function, it does not allow custom sorting or filtering from the database.
   final Future<List<ProductModel>>? futureMethod;
 
   @override
   Widget build(BuildContext context) {
-    // Initialize controller for managing product fetching
+
     final controller = Get.put(AllProductsController());
 
     return Scaffold(
@@ -41,7 +38,7 @@ class AllProducts extends StatelessWidget {
           child: FutureBuilder(
             future: futureMethod ?? controller.fetchProductsByQuery(query),
             builder: (_, snapshot) {
-              // Check the state of the FutureBuilder snapshot
+
               const loader = TVerticalProductShimmer();
               final widget = TCloudHelperFunctions.checkMultiRecordState(snapshot: snapshot, loader: loader);
 
@@ -59,28 +56,27 @@ class AllProducts extends StatelessWidget {
   }
 }
 
-/// Represents a sortable list of products that can be filtered and sorted.
-///
-/// You can also perform sorting directly from the database using [ProductRepository.filterProducts].
+
+
 class TSortableProductList extends StatelessWidget {
   const TSortableProductList({
     Key? key,
     required this.products,
   }) : super(key: key);
 
-  /// The list of products to be displayed.
+
   final List<ProductModel> products;
 
   @override
   Widget build(BuildContext context) {
-    // Initialize controller for managing product sorting
+
     final controller = Get.put(AllProductsController());
-    // Assign the products to the controller
+
     controller.assignProducts(products);
 
     return Column(
       children: [
-        /// -- Sort & Filter Section
+
         Row(
           children: [
             Obx(
@@ -90,7 +86,7 @@ class TSortableProductList extends StatelessWidget {
                   decoration: const InputDecoration(prefixIcon: Icon(Iconsax.sort)),
                   value: controller.selectedSortOption.value,
                   onChanged: (value) {
-                    // Sort products based on the selected option
+
                     controller.sortProducts(value!);
                   },
                   items: ['Name', 'Higher Price', 'Lower Price', 'Sale', 'Newest', 'Popularity'].map((option) {
@@ -106,7 +102,7 @@ class TSortableProductList extends StatelessWidget {
         ),
         const SizedBox(height: TSizes.spaceBtwSections),
 
-        /// Product Grid Section
+
         Obx(
           () => TGridLayout(
             itemCount: controller.products.length,
@@ -114,7 +110,7 @@ class TSortableProductList extends StatelessWidget {
           ),
         ),
 
-        /// Bottom spacing to accommodate the navigation bar
+
         SizedBox(height: TDeviceUtils.getBottomNavigationBarHeight() + TSizes.defaultSpace),
       ],
     );
