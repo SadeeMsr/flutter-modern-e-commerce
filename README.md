@@ -1,8 +1,9 @@
 # Final Project
-## Features
 
-| ID | Feature 2 | Feature 3 | Feature 4 |
-|-----------|-----------|-----------|-----------|
-| Details   | Details   | Details   | Details   |
-| Details   | Details   | Details   | Details   |
-| Details   | Details   | Details   | Details   |
+## E-Commerce App ( Group-23 )
+
+| ID | Name | 
+|-----------|-----------|
+| 1930672   | Md. Shadi Rohan   | 
+|  1930871  | Md Shad Ashfaque Hossain   |
+| 1821789   | Mohtasim Khan    |
