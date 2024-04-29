@@ -17,7 +17,6 @@ class TFormatter {
     } else if (phoneNumber.length == 11) {
       return '(${phoneNumber.substring(0, 4)}) ${phoneNumber.substring(4, 7)} ${phoneNumber.substring(7)}';
     }
-    // Add more custom phone number formatting logic for different formats if needed.
     return phoneNumber;
   }
 
