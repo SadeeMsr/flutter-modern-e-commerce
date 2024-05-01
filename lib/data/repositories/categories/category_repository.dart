@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '../../../features/shop/models/category_model.dart';
-import '../../../features/shop/models/product_category_model.dart';
 import '../../../utils/exceptions/platform_exceptions.dart';
 import '../../services/cloud_storage/firebase_storage_service.dart';
 
@@ -62,21 +61,6 @@ class CategoryRepository extends GetxController {
             .collection("Categories")
             .doc(category.id)
             .set(category.toJson());
-      }
-    } on FirebaseException catch (e) {
-      throw TFirebaseException(e.code).message;
-    } on PlatformException catch (e) {
-      throw TPlatformException(e.code).message;
-    } catch (e) {
-      throw 'Something went wrong. Please try again';
-    }
-  }
-
-  Future<void> uploadProductCategoryDummyData(
-      List<ProductCategoryModel> productCategory) async {
-    try {
-      for (var entry in productCategory) {
-        await _db.collection("ProductCategory").doc().set(entry.toJson());
       }
     } on FirebaseException catch (e) {
       throw TFirebaseException(e.code).message;

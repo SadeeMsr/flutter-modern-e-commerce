@@ -12,20 +12,15 @@ import '../features/shop/screens/checkout/checkout.dart';
 import '../features/shop/screens/favourites/favourite.dart';
 import '../features/shop/screens/home/home.dart';
 import '../features/shop/screens/order/order.dart';
-import '../features/shop/screens/product_reviews/product_reviews.dart';
-import '../features/shop/screens/search/search.dart';
 import '../features/shop/screens/store/store.dart';
 import 'routes.dart';
 
 class AppRoutes {
   static final pages = [
     GetPage(name: TRoutes.home, page: () => const HomeScreen()),
-    GetPage(name: TRoutes.store, page: () => const StoreScreen()),
+    GetPage(name: TRoutes.store, page: () => StoreScreen()),
     GetPage(name: TRoutes.favourites, page: () => const FavouriteScreen()),
     GetPage(name: TRoutes.settings, page: () => const SettingsScreen()),
-    GetPage(name: TRoutes.search, page: () => SearchScreen()),
-    GetPage(
-        name: TRoutes.productReviews, page: () => const ProductReviewsScreen()),
     GetPage(name: TRoutes.order, page: () => const OrderScreen()),
     GetPage(name: TRoutes.checkout, page: () => const CheckoutScreen()),
     GetPage(name: TRoutes.cart, page: () => const CartScreen()),

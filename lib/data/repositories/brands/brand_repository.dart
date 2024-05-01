@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-import '../../../features/shop/models/brand_category_model.dart';
 import '../../../features/shop/models/brand_model.dart';
 import '../../services/cloud_storage/firebase_storage_service.dart';
 
@@ -94,23 +93,6 @@ class BrandRepository extends GetxController {
         brand.image = url;
 
         await _db.collection("Brands").doc(brand.id).set(brand.toJson());
-      }
-    } on FirebaseException catch (e) {
-      throw e.message!;
-    } on SocketException catch (e) {
-      throw e.message;
-    } on PlatformException catch (e) {
-      throw e.message!;
-    } catch (e) {
-      throw e.toString();
-    }
-  }
-
-  Future<void> uploadBrandCategoryDummyData(
-      List<BrandCategoryModel> brandCategory) async {
-    try {
-      for (var entry in brandCategory) {
-        await _db.collection("BrandCategory").doc().set(entry.toJson());
       }
     } on FirebaseException catch (e) {
       throw e.message!;

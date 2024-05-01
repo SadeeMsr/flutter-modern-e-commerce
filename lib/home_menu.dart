@@ -51,7 +51,7 @@ class AppScreenController extends GetxController {
 
   final screens = [
     const HomeScreen(),
-    const StoreScreen(),
+    StoreScreen(),
     const FavouriteScreen(),
     const SettingsScreen()
   ];

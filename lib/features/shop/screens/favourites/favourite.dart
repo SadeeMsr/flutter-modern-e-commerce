@@ -30,7 +30,7 @@ class FavouriteScreen extends StatelessWidget {
           actions: [
             TCircularIcon(
                 icon: Iconsax.add,
-                onPressed: () => Get.to(() => const StoreScreen()))
+                onPressed: () => Get.to(() => StoreScreen()))
           ],
         ),
         body: SingleChildScrollView(

@@ -9,7 +9,6 @@ import '../../../../utils/constants/sizes.dart';
 import '../../../../utils/device/device_utility.dart';
 import '../../models/product_model.dart';
 import '../checkout/checkout.dart';
-import '../product_reviews/product_reviews.dart';
 import 'widgets/product_attributes.dart';
 import 'widgets/product_detail_image_slider.dart';
 import 'widgets/product_meta_data.dart';
@@ -70,19 +69,6 @@ class ProductDetailScreen extends StatelessWidget {
                   const SizedBox(height: TSizes.spaceBtwSections),
                   const Divider(),
                   const SizedBox(height: TSizes.spaceBtwItems),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const TSectionHeading(
-                          title: 'Reviews (199)', showActionButton: false),
-                      IconButton(
-                        icon: const Icon(Iconsax.arrow_right_3, size: 18),
-                        onPressed: () => Get.to(
-                            () => const ProductReviewsScreen(),
-                            fullscreenDialog: true),
-                      )
-                    ],
-                  ),
                 ],
               ),
             ),

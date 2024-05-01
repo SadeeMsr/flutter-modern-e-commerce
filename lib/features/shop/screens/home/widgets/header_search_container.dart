@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import '../../../../../utils/constants/colors.dart';
 import '../../../../../utils/constants/sizes.dart';
 import '../../../../../utils/device/device_utility.dart';
 import '../../../../../utils/helpers/helper_functions.dart';
-import '../../search/search.dart';
 
 class TSearchContainer extends StatelessWidget {
   const TSearchContainer({
@@ -28,7 +26,6 @@ class TSearchContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
     return GestureDetector(
-      onTap: () => Get.to(() => SearchScreen()),
       child: Padding(
         padding: padding,
         child: Container(

@@ -73,35 +73,7 @@ class UploadDataScreen extends StatelessWidget {
                           size: 28, color: TColors.primary),
                     ),
                   ),
-                  const SizedBox(height: TSizes.spaceBtwSections),
-                  const TSectionHeading(
-                      title: 'Relationships', showActionButton: false),
-                  const Text(
-                      'Make sure you have already uploaded all the content above.'),
-                  const SizedBox(height: TSizes.spaceBtwItems),
-                  ListTile(
-                    leading: const Icon(Iconsax.link,
-                        size: 28, color: TColors.primary),
-                    title: Text('Upload Brands & Categories Relation Data',
-                        style: Theme.of(context).textTheme.titleMedium),
-                    trailing: IconButton(
-                      onPressed: () => controller.uploadBrandCategory(),
-                      icon: const Icon(Iconsax.arrow_up_1,
-                          size: 28, color: TColors.primary),
-                    ),
-                  ),
-                  const SizedBox(height: TSizes.spaceBtwItems),
-                  ListTile(
-                    leading: const Icon(Iconsax.link,
-                        size: 28, color: TColors.primary),
-                    title: Text('Upload Product Categories Relational Data',
-                        style: Theme.of(context).textTheme.titleMedium),
-                    trailing: IconButton(
-                      onPressed: () => controller.uploadProductCategories(),
-                      icon: const Icon(Iconsax.arrow_up_1,
-                          size: 28, color: TColors.primary),
-                    ),
-                  ),
+                 
                 ],
               ),
             ),

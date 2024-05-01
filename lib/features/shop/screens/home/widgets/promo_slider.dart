@@ -17,8 +17,7 @@ class TPromoSlider extends StatelessWidget {
   Widget build(BuildContext context) {
     
     final controller = Get.put(BannerController());
-
-    
+        
     return Obx(
       () {
         

@@ -9,11 +9,9 @@ class GeneralBindings extends Bindings {
   @override
   void dependencies() {
     Get.put(NetworkManager());
-
     Get.put(CheckoutController());
     Get.put(VariationController());
     Get.put(ImagesController());
-
     Get.put(AddressController());
   }
 }

@@ -6,7 +6,6 @@ import '../../../../../common/widgets/texts/section_heading.dart';
 import '../../../../../utils/constants/colors.dart';
 import '../../../../../utils/constants/sizes.dart';
 import '../../../controllers/categories_controller.dart';
-import '../../sub_category/sub-categories.dart';
 
 class THeaderCategories extends StatelessWidget {
   const THeaderCategories({super.key});
@@ -49,9 +48,7 @@ class THeaderCategories extends StatelessWidget {
                           categoryController.featuredCategories[index];
                       return TVerticalImageAndText(
                         title: category.name,
-                        image: category.image,
-                        onTap: () => Get.to(
-                            () => SubCategoriesScreen(category: category)),
+                        image: category.image
                       );
                     },
                   ),

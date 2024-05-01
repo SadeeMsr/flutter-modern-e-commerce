@@ -41,30 +41,6 @@ class UploadDataController extends GetxController {
     }
   }
 
-  Future<void> uploadProductCategories() async {
-    try {
-      WakelockPlus.enable();
-
-      TFullScreenLoader.openLoadingDialog(
-        'Sit Tight! Your PRODUCT CATEGORIES relationship is uploading...',
-        TImages.cloudUploadingAnimation,
-      );
-
-      final controller = Get.put(CategoryRepository());
-
-      await controller
-          .uploadProductCategoryDummyData(TDummyData.productCategories);
-
-      TLoaders.successSnackBar(
-          title: 'Congratulations',
-          message: 'All Categories Uploaded Successfully.');
-    } catch (e) {
-      TLoaders.errorSnackBar(title: 'Oh Snap', message: e.toString());
-    } finally {
-      WakelockPlus.disable();
-      TFullScreenLoader.stopLoading();
-    }
-  }
 
   Future<void> uploadBrands() async {
     try {
@@ -92,29 +68,7 @@ class UploadDataController extends GetxController {
     }
   }
 
-  Future<void> uploadBrandCategory() async {
-    try {
-      WakelockPlus.enable();
 
-      TFullScreenLoader.openLoadingDialog(
-        'Sit Tight! Your BRANDS & CATEGORIES relationship is uploading...',
-        TImages.cloudUploadingAnimation,
-      );
-
-      final controller = Get.put(BrandRepository());
-
-      await controller.uploadBrandCategoryDummyData(TDummyData.brandCategory);
-
-      TLoaders.successSnackBar(
-          title: 'Congratulations',
-          message: 'All Brands Uploaded Successfully.');
-    } catch (e) {
-      TLoaders.errorSnackBar(title: 'Oh Snap', message: e.toString());
-    } finally {
-      WakelockPlus.disable();
-      TFullScreenLoader.stopLoading();
-    }
-  }
 
   Future<void> uploadProducts() async {
     try {

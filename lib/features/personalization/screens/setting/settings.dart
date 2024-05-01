@@ -25,33 +25,32 @@ class SettingsScreen extends StatelessWidget {
     final controller = UserController.instance;
     return PopScope(
       canPop: false,
+      
       onPopInvoked: (value) async => Get.offAll(const HomeMenu()),
       child: Scaffold(
         body: SingleChildScrollView(
           child: Column(
             children: [
+              
               TPrimaryHeaderContainer(
                 child: Column(
                   children: [
-                    TAppBar(
-                        title: Text('Account',
-                            style: Theme.of(context)
-                                .textTheme
-                                .headlineMedium!
-                                .apply(color: TColors.white))),
-                    TUserProfileTile(
-                        onPressed: () => Get.to(() => const ProfileScreen())),
+                    
+                    TAppBar(title: Text('Account', style: Theme.of(context).textTheme.headlineMedium!.apply(color: TColors.white))),
+
+                    
+                    TUserProfileTile(onPressed: () => Get.to(() => const ProfileScreen())),
                     const SizedBox(height: TSizes.spaceBtwSections),
                   ],
                 ),
               ),
+
               Padding(
                 padding: const EdgeInsets.all(TSizes.defaultSpace),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const TSectionHeading(
-                        title: 'Account Settings', showActionButton: false),
+                    const TSectionHeading(title: 'Account Settings', showActionButton: false),
                     const SizedBox(height: TSizes.spaceBtwItems),
                     TSettingsMenuTile(
                       icon: Iconsax.safe_home,
@@ -71,27 +70,9 @@ class SettingsScreen extends StatelessWidget {
                       subTitle: 'In-progress and Completed Orders',
                       onTap: () => Get.to(() => const OrderScreen()),
                     ),
-                    const TSettingsMenuTile(
-                        icon: Iconsax.bank,
-                        title: 'Bank Account',
-                        subTitle:
-                            'Withdraw balance to registered bank account'),
-                    const TSettingsMenuTile(
-                        icon: Iconsax.discount_shape,
-                        title: 'My Coupons',
-                        subTitle: 'List of all the discounted coupons'),
-                    TSettingsMenuTile(
-                        icon: Iconsax.notification,
-                        title: 'Notifications',
-                        subTitle: 'Set any kind of notification message',
-                        onTap: () {}),
-                    const TSettingsMenuTile(
-                        icon: Iconsax.security_card,
-                        title: 'Account Privacy',
-                        subTitle: 'Manage data usage and connected accounts'),
+          
                     const SizedBox(height: TSizes.spaceBtwSections),
-                    const TSectionHeading(
-                        title: 'App Settings', showActionButton: false),
+                    const TSectionHeading(title: 'App Settings', showActionButton: false),
                     const SizedBox(height: TSizes.spaceBtwItems),
                     TSettingsMenuTile(
                       icon: Iconsax.document_upload,
@@ -99,31 +80,9 @@ class SettingsScreen extends StatelessWidget {
                       subTitle: 'Upload Data to your Cloud Firebase',
                       onTap: () => Get.to(() => const UploadDataScreen()),
                     ),
-                    const SizedBox(height: TSizes.spaceBtwItems),
-                    TSettingsMenuTile(
-                      icon: Iconsax.location,
-                      title: 'Geolocation',
-                      subTitle: 'Set recommendation based on location',
-                      trailing: Switch(value: true, onChanged: (value) {}),
-                    ),
-                    TSettingsMenuTile(
-                      icon: Iconsax.security_user,
-                      title: 'Safe Mode',
-                      subTitle: 'Search result is safe for all ages',
-                      trailing: Switch(value: false, onChanged: (value) {}),
-                    ),
-                    TSettingsMenuTile(
-                      icon: Iconsax.image,
-                      title: 'HD Image Quality',
-                      subTitle: 'Set image quality to be seen',
-                      trailing: Switch(value: false, onChanged: (value) {}),
-                    ),
                     const SizedBox(height: TSizes.spaceBtwSections),
                     SizedBox(
-                        width: double.infinity,
-                        child: OutlinedButton(
-                            onPressed: () => controller.logout(),
-                            child: const Text('Logout'))),
+                        width: double.infinity, child: OutlinedButton(onPressed: () => controller.logout(), child: const Text('Logout'))),
                     const SizedBox(height: TSizes.spaceBtwSections * 2.5),
                   ],
                 ),
